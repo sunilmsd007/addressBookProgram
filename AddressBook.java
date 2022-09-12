@@ -42,7 +42,7 @@ public String firstName,lastName,address,state,city,zip,phoneNumber,email;
 		String email=sc.next();
 		
 		AddressBook p = new AddressBook(firstname,lastname,address, city,state,zip,phoneNumber,email);
-		// list.add(e);
+		
 		p.displayDetails();	
              }
 }
