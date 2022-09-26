@@ -61,16 +61,16 @@ import java.util.*;
     		       switch(ch) {
     		       case 1:{
     		    	   System.out.println("enter the data to be edited as firstname");
-    		    	   String fname= sc.next();
-    		    	   list.set(0,fname);
+    		    	   String firstname= sc.next();
+    		    	   list.set(0,firstname);
     		    	   System.out.println("changed data");
         			   System.out.println(list);
         			   break;
     		       }
     		       case 2:{
     		    	   System.out.println("enter the data to be edited as lastname");
-    		    	   String lname= sc.next();
-    		    	   list.set(1,lname);
+    		    	   String lastname= sc.next();
+    		    	   list.set(1,lastname);
     		    	   System.out.println("changed data");
         			   System.out.println(list);
         			   break;
@@ -171,3 +171,4 @@ import java.util.*;
 		
 	    }
 	}
+
