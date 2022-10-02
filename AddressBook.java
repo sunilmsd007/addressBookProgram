@@ -94,6 +94,19 @@ import java.util.*;
 			}
 		}
 	}
+	public void searchByCity() {
+         //method to search person from city
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the city name");
+		String city = sc.next();
+		Predicate<Person> isCitySame = cityname -> cityname.equals(city);
+		List<String> peopleFromSameCity = new ArrayList<>();
+		Person p = new Person();
+		if(book.stream().anyMatch(isCitySame)) {
+			peopleFromSameCity.add(p.firstname);
+		}
+		System.out.println(peopleFromSameCity);
+	}
         public void edit() {
          //method to edit person's details
 		System.out.println("enter existing first name");
@@ -195,6 +208,7 @@ import java.util.*;
 			System.out.println("enter 2 for edit ");
 			System.out.println("enter 3 for display ");
 			System.out.println("enter 4 for delete ");
+                        System.out.println("enter 5 for search person from city");
 			int choice = sc.nextInt();
 			switch (choice) {
 			case 1: {
@@ -211,6 +225,10 @@ import java.util.*;
 			}
 			case 4: {
 				b.delete();
+				break;
+			}
+                        case 5: {
+				b.searchByCity();
 				break;
 			}
 			}
