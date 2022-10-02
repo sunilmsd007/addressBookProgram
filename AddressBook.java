@@ -116,6 +116,10 @@ import java.util.*;
 		List<Person> sortedFirstNameList =  book.stream().sorted((n1, n2) -> n1.firstname.compareTo(n2.firstname)).collect(Collectors.toList());
 		System.out.println("Sorted Contacts In Address Book By Name: " +sortedFirstNameList);
 	}
+	void sortByState() {
+		List<Person> sortedStateList =  book.stream().sorted((n1, n2) -> n1.state.compareTo(n2.state)).collect(Collectors.toList());
+		System.out.println("Sorted Contacts In Address Book By State: " +sortedStateList);
+	}
         public void edit() {
          //method to edit person's details
 		System.out.println("enter existing first name");
@@ -219,6 +223,7 @@ import java.util.*;
 			System.out.println("enter 4 for delete ");
                         System.out.println("enter 5 for search person from city");
                         System.out.println("enter 6 to sort first names alphabetically");
+                        System.out.println("enter 7 to sort contacts by state");
 			int choice = sc.nextInt();
 			switch (choice) {
 			case 1: {
@@ -243,6 +248,10 @@ import java.util.*;
 			}
                         case 6: {
 				b.sortByFirstName();
+				break;
+			}
+                        case 7: {
+				b.sortByState();
 				break;
 			}
 			}
