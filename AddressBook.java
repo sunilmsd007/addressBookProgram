@@ -105,7 +105,11 @@ import java.util.*;
 		if(book.stream().anyMatch(isCitySame)) {
 			peopleFromSameCity.add(p.firstname);
 		}
+                //prints name of persons from same city
 		System.out.println(peopleFromSameCity);
+                long count = peopleFromSameCity.stream().count();
+                //prints number of persons in that city
+		System.out.println("Number of persons in the city : " +count);
 	}
         public void edit() {
          //method to edit person's details
