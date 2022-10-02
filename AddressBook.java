@@ -111,6 +111,11 @@ import java.util.*;
                 //prints number of persons in that city
 		System.out.println("Number of persons in the city : " +count);
 	}
+	public void sortByFirstName() {
+              //method to sort first names in addressbook alphabetically
+		List<Person> sortedFirstNameList =  book.stream().sorted((n1, n2) -> n1.firstname.compareTo(n2.firstname)).collect(Collectors.toList());
+		System.out.println("Sorted Contacts In Address Book By Name: " +sortedFirstNameList);
+	}
         public void edit() {
          //method to edit person's details
 		System.out.println("enter existing first name");
@@ -213,6 +218,7 @@ import java.util.*;
 			System.out.println("enter 3 for display ");
 			System.out.println("enter 4 for delete ");
                         System.out.println("enter 5 for search person from city");
+                        System.out.println("enter 6 to sort first names alphabetically");
 			int choice = sc.nextInt();
 			switch (choice) {
 			case 1: {
@@ -233,6 +239,10 @@ import java.util.*;
 			}
                         case 5: {
 				b.searchByCity();
+				break;
+			}
+                        case 6: {
+				b.sortByFirstName();
 				break;
 			}
 			}
