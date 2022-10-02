@@ -27,8 +27,9 @@ import java.util.*;
 	Book() {
 		book = new ArrayList<>();
 	}
-         public void add() {
+         public void addDetails() {
          //method to add person details
+                checkDuplicate();
 		Scanner sc =new Scanner(System.in);
 		System.out.println("enter first name");
 		String firstname=sc.next();
@@ -50,6 +51,21 @@ import java.util.*;
 		book.add(s);
 
        }
+	public void checkDuplicate() {
+            //method to check if duplicate first name exists using java stream
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the first name");
+		String firstname = sc.next();
+		System.out.println("Checking if same name already exists..");
+		Predicate<Person> isFirstName = name -> name.equals(firstname);
+		if(book.stream().anyMatch(isFirstName)) {
+		    System.out.println("Name already exist! Try entering other Name");
+		    addDetails();
+		}
+		else{
+	            System.out.println("No similar Name found, continue adding");
+                    }
+       }
 	public void displayDetails() {
          //method to display details of person
 		System.out.println("enter existing first name");
@@ -60,8 +76,9 @@ import java.util.*;
 			if (data.equals(p.firstname)) {
 				p.display();
 			}
-			else
-				System.out.println("data not found");
+			else{
+			       System.out.println("data not found");
+                            }
 		}
 	}
 	public void delete() {
@@ -181,7 +198,7 @@ import java.util.*;
 			int choice = sc.nextInt();
 			switch (choice) {
 			case 1: {
-				b.add();
+				b.addDetails();
 				break;
 			}
 			case 2: {
